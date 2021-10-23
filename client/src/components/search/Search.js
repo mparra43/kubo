@@ -31,13 +31,13 @@ export const Search = ({history}) => {
             <Navbar/>
             <div className="container mt-2">
 
-                <h1>Search Screen</h1>
+                <h1>Encuentra tu película </h1>
                 <hr/>
 
                 <div className="row">
 
                     <div className="col-5">
-                        <h4> Search Form </h4>
+                        <h4> Buscar </h4>
                         <hr/>
 
                         <form onSubmit={handleSearch}>
@@ -65,7 +65,7 @@ export const Search = ({history}) => {
 
                     <div className="col-7">
 
-                        <h4> Results </h4>
+                        <h4> Resultados  </h4>
                         <hr/>
 
 
@@ -73,7 +73,7 @@ export const Search = ({history}) => {
                             (q !== '' && searchMovies.length === 0)
                             &&
                             <div className="alert alert-danger">
-                                No hay una películas con {q}
+                                No se encontró una película con {q}
                             </div>
                         }
 

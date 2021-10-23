@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './styles/rating.css'
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
 import {addFilms} from "../../actions/films";
 
 
@@ -10,7 +10,7 @@ export const Rating= () => {
 
     const [formValues, setFormValues] = useState({ id:movie.id, movie:movie.title, star:""});
 
-
+    const dispatch = useDispatch();
 
 
     const handleInputChange = ({target}) => {
