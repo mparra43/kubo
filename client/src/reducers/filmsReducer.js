@@ -7,7 +7,8 @@ const initialState = {
     categories: [],
     novelties:[],
     category:"",
-    searchMovies:[]
+    searchMovies:[],
+    ratedMovies:[]
 }
 
 export const filmsReducer = (state = initialState, action) => {
@@ -43,15 +44,12 @@ export const filmsReducer = (state = initialState, action) => {
             }
 
         case types.addFilms:
-           let searchMovies = state.movies.filter((e)=>e.title.includes(action.payload))
-            console.log(searchMovies)
             return {
                 ...state,
-                searchMovies: state.movies.filter((e)=>e.title.includes(action.payload))
+                ratedMovies: [...state.ratedMovies, action.payload]
             }
 
         case types.findName:
-            console.log(action.payload)
             return {
                 ...state,
                 searchMovies: state.movies.filter((e)=>e.title.includes(action.payload))

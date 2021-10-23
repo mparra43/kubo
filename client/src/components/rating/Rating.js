@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import './styles/rating.css'
 import {useSelector} from "react-redux";
+import {addFilms} from "../../actions/films";
 
 
 
 export const Rating= () => {
     const {movie} = useSelector(state => state.films);
 
-    const [formValues, setFormValues] = useState({movie:movie, view:false, star:""});
+    const [formValues, setFormValues] = useState({ id:movie.id, movie:movie.title, star:""});
 
 
 
@@ -20,9 +21,7 @@ export const Rating= () => {
     }
     const handleSubmitForm = (e) => {
         e.preventDefault();
-        console.log(formValues)
-        
-
+        dispatch(addFilms(formValues))
     }
 
 
@@ -32,7 +31,7 @@ export const Rating= () => {
                 <form  onSubmit={handleSubmitForm}>
                     <div className="checkbox">
                         <input type="checkbox" id="checkbox" name="view" value={true} onChange={handleInputChange}/>
-                            <label htmlFor="checkbox">Ya la viste ?</label>
+                        <label htmlFor="checkbox">Ya la viste ?</label>
                     </div>
                     <div className="rating">
                         <input id="star5" name="star" type="radio" value="5" className="radio-btn hide" onChange={handleInputChange}/>
