@@ -1,0 +1,14 @@
+.container-from{
+    max-width: 540px;
+    margin: 25px auto;
+}
+
+.form{
+    display:grid;
+    grid-template-columns: 80px 35% 21%;
+    gap:15px;
+    justify-content: center;
+}
+.card-title{
+    margin-top:5px;
+}
